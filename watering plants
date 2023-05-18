@@ -1,0 +1,21 @@
+class Solution {
+    public int wateringPlants(int[] plants, int capacity) {
+        int step =0;
+        int n = plants.length;
+        int a = capacity;
+        int i=0;
+        while(i<n){
+            
+            if(a < plants[i]){
+                a= capacity;
+                 step = step + 2*i;
+                
+            }
+            else{
+                a = a- plants[i++];
+                step++;
+            }
+        }
+        return step;
+    }
+}
